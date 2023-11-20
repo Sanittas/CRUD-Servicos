@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ServicoEmpresaServices {
@@ -34,7 +35,7 @@ public class ServicoEmpresaServices {
             ServicoEmpresa novoServico = new ServicoEmpresa();
             novoServico.setEmpresa(empresa);
             novoServico.setServico(servico);
-            novoServico.setValorServico(dados.getValorServico());
+            novoServico.setValorServico(Double.valueOf(dados.getValorServico()));
             novoServico.setDuracaoEstimada(dados.getDuracaoEstimada());
             novoServico.setEquipeResponsavel(dados.getEquipeResponsavel());
             servicoEmpresaRepository.save(novoServico);
@@ -42,4 +43,6 @@ public class ServicoEmpresaServices {
             throw new RuntimeException(e.getLocalizedMessage());
         }
     }
+
+
 }
