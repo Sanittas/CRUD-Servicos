@@ -13,6 +13,7 @@ public class AgendamentoServico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDateTime dataHoraAgendamento;
+    private Integer avaliacaoServico;
     @ManyToOne
     @JoinColumn(name = "fk_usuario")
     private Usuario usuario;

@@ -20,7 +20,7 @@ public class ServicoEmpresa {
     @MapsId("fkServico")
     @JoinColumn(name = "fkServico")
     private Servico servico;
-    private String valorServico;
+    private Double valorServico;
     private String duracaoEstimada;
     private String equipeResponsavel;
     @OneToMany(mappedBy = "servicoEmpresa")
